@@ -10,6 +10,7 @@ ARG REGISTRY
 MAINTAINER Elad Hirsch
 
 # Add downloaded artifacts from jfrog cli to the image
+RUN ls -lR
 ADD ./client.tgz .
 ADD ./server.jar .
 
