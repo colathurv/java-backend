@@ -10,8 +10,8 @@ ARG REGISTRY
 MAINTAINER Elad Hirsch
 
 # Add downloaded artifacts from jfrog cli to the image
-ADD ./client.tgz
-ADD ./server.jar
+ADD ./client.tgz .
+ADD ./server.jar .
 
 # RUN curl $REGISTRY/libs-release-local/com/jfrog/backend/1.0.0/backend-1.0.0.jar --output server.jar
 # RUN curl $REGISTRY/npm-local/frontend/-/frontend-3.0.0.tgz --output client.tgz
