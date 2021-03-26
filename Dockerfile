@@ -9,14 +9,17 @@ WORKDIR /app
 ARG REGISTRY
 MAINTAINER Elad Hirsch
 
-# Download artifacts from Artifactory
-RUN curl $REGISTRY/libs-release-local/com/jfrog/backend/1.0.0/backend-1.0.0.jar --output server.jar
-RUN curl $REGISTRY/npm-local/frontend/-/frontend-3.0.0.tgz --output client.tgz
+# Add downloaded artifacts from jfrog cli to the image
+ADD ./client.tgz
+ADD ./server.jar
+
+# RUN curl $REGISTRY/libs-release-local/com/jfrog/backend/1.0.0/backend-1.0.0.jar --output server.jar
+# RUN curl $REGISTRY/npm-local/frontend/-/frontend-3.0.0.tgz --output client.tgz
 
 #Extract vue app
-RUN ls -l client.tgz 
+RUN ls -l
 RUN tar -xzf client.tgz
-# RUN rm client.tgz
+RUN rm client.tgz
 
 # Set JAVA OPTS + Static file location
 ENV STATIC_FILE_LOCATION="/app/package/target/dist/"
