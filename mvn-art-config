@@ -3,8 +3,8 @@ type: maven
 resolver:
   snapshotRepo: libs-snapshot
   releaseRepo: libs-release
-  serverID: ARTFY_INT
+  serverID: ARTFY_INT # <-- PREREQ(REHYDRATE): Replace by the name of the Artifactory Integration
 deployer:
   snapshotRepo: libs-snapshot-local
   releaseRepo: libs-release-local
-  serverID: ARTFY_INT
+  serverID: ARTFY_INT # <-- PREREQ(REHYDRATE): Replace by the name of the Artifactory Integration
