@@ -14,7 +14,9 @@ RUN curl $REGISTRY/libs-release-local/com/jfrog/backend/1.0.0/backend-1.0.0.jar 
 RUN curl $REGISTRY/npm-local/frontend/-/frontend-3.0.0.tgz --output client.tgz
 
 #Extract vue app
-RUN tar -xzf client.tgz && rm client.tgz
+RUN ls -l client.tgz 
+RUN tar -xzf client.tgz
+# RUN rm client.tgz
 
 # Set JAVA OPTS + Static file location
 ENV STATIC_FILE_LOCATION="/app/package/target/dist/"
