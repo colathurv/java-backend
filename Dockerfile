@@ -17,9 +17,9 @@ ADD ./server.jar .
 # RUN curl $REGISTRY/npm-local/frontend/-/frontend-3.0.0.tgz --output client.tgz
 
 #Extract vue app
-RUN ls -l
-RUN tar -xzf client.tgz
-RUN rm client.tgz
+RUN ls -lR
+#RUN tar -xzf client.tgz
+#RUN rm client.tgz
 
 # Set JAVA OPTS + Static file location
 ENV STATIC_FILE_LOCATION="/app/package/target/dist/"
